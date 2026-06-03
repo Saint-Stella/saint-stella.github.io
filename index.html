@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SAINT STELLA | セイントステラ｜橿原市のホテル</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Noto+Serif+JP:wght@300;400;500&family=Noto+Sans+JP:wght@300;400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --gold: #c9a96e;
+    --gold-light: #e8d4a8;
+    --dark: #0d0d0d;
+    --dark-2: #181818;
+    --dark-3: #232323;
+    --text: #e8e2d9;
+    --text-muted: #9a9080;
+    --red-accent: #8b2032;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--dark);
+    color: var(--text);
+    font-family: 'Noto Serif JP', serif;
+    font-weight: 300;
+    overflow-x: hidden;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 20px 48px;
+    background: linear-gradient(to bottom, rgba(13,13,13,.95), transparent);
+  }
+  .nav-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.35rem; letter-spacing: .25em; color: var(--gold);
+    text-transform: uppercase;
+  }
+  .nav-links { display: flex; gap: 36px; list-style: none; }
+  .nav-links a {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: .72rem; letter-spacing: .18em; color: var(--text-muted);
+    text-decoration: none; transition: color .3s;
+  }
+  .nav-links a:hover { color: var(--gold); }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 100vh;
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    position: relative;
+    background: radial-gradient(ellipse at 60% 40%, #1a0f0a 0%, var(--dark) 65%);
+    text-align: center;
+    padding: 120px 24px 80px;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute; inset: 0;
+    background:
+      radial-gradient(circle at 20% 80%, rgba(139,32,50,.07) 0%, transparent 50%),
+      radial-gradient(circle at 80% 20%, rgba(201,169,110,.06) 0%, transparent 45%);
+    pointer-events: none;
+  }
+  .hero-ornament {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: .75rem; letter-spacing: .5em; color: var(--gold);
+    text-transform: uppercase; margin-bottom: 28px;
+    opacity: 0; animation: fadeUp .8s .2s forwards;
+  }
+  .hero-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(3.2rem, 10vw, 7.5rem);
+    font-weight: 300; letter-spacing: .1em;
+    line-height: 1; color: var(--text);
+    opacity: 0; animation: fadeUp .9s .4s forwards;
+  }
+  .hero-title em {
+    font-style: italic; color: var(--gold); display: block;
+    font-size: .55em; letter-spacing: .2em;
+  }
+  .hero-sub {
+    font-family: 'Noto Serif JP', serif;
+    font-size: clamp(.85rem, 2vw, 1rem);
+    color: var(--text-muted); letter-spacing: .15em;
+    margin-top: 28px; line-height: 2;
+    opacity: 0; animation: fadeUp .9s .6s forwards;
+  }
+  .hero-divider {
+    width: 1px; height: 60px;
+    background: linear-gradient(to bottom, transparent, var(--gold), transparent);
+    margin: 36px auto 0;
+    opacity: 0; animation: fadeUp .9s .8s forwards;
+  }
+  .hero-badges {
+    display: flex; flex-wrap: wrap; justify-content: center; gap: 12px;
+    margin-top: 36px;
+    opacity: 0; animation: fadeUp .9s 1s forwards;
+  }
+  .badge {
+    border: 1px solid rgba(201,169,110,.35);
+    padding: 8px 20px;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: .7rem; letter-spacing: .15em; color: var(--gold-light);
+    background: rgba(201,169,110,.04);
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ── SECTION BASE ── */
+  section { padding: 100px 24px; }
+  .section-label {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: .72rem; letter-spacing: .5em;
+    text-transform: uppercase; color: var(--gold);
+    display: block; margin-bottom: 16px;
+  }
+  .section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2rem, 5vw, 3.2rem);
+    font-weight: 300; letter-spacing: .06em;
+    line-height: 1.2;
+  }
+  .container { max-width: 1100px; margin: 0 auto; }
+
+  /* ── APPEAL ── */
+  #appeal { background: var(--dark-2); }
+  .appeal-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1px; margin-top: 60px;
+    border: 1px solid rgba(201,169,110,.12);
+  }
+  .appeal-card {
+    padding: 44px 36px;
+    background: var(--dark-2);
+    border-right: 1px solid rgba(201,169,110,.08);
+    transition: background .35s;
+  }
+  .appeal-card:last-child { border-right: none; }
+  .appeal-card:hover { background: var(--dark-3); }
+  .appeal-icon {
+    font-size: 1.8rem; margin-bottom: 20px; display: block;
+    filter: sepia(1) saturate(1.5) hue-rotate(-10deg);
+  }
+  .appeal-card h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.35rem; font-weight: 400; letter-spacing: .06em;
+    color: var(--gold-light); margin-bottom: 12px;
+  }
+  .appeal-card p {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: .78rem; line-height: 1.9; color: var(--text-muted);
+  }
+  .price-highlight {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.6rem; color: var(--gold); font-weight: 300;
+    display: block; margin-top: 10px; letter-spacing: .05em;
+  }
+
+  /* ── PRIVACY FEATURE ── */
+  #privacy {
+    background: var(--dark);
+    position: relative; overflow: hidden;
+  }
+  #privacy::before {
+    content: '';
+    position: absolute; top: -200px; right: -200px;
+    width: 600px; height: 600px;
+    background: radial-gradient(circle, rgba(139,32,50,.06) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .privacy-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px; align-items: center;
+    margin-top: 60px;
+  }
+  .privacy-text p {
+    font-family: 'Noto Serif JP', serif;
+    font-size: .88rem; line-height: 2.2;
+    color: var(--text-muted); margin-top: 24px;
+  }
+  .privacy-visual {
+    position: relative;
+  }
+  .flow-steps {
+    display: flex; flex-direction: column; gap: 0;
+    border-left: 1px solid rgba(201,169,110,.2);
+    padding-left: 32px;
+  }
+  .flow-step {
+    position: relative; padding: 20px 0;
+  }
+  .flow-step::before {
+    content: '';
+    position: absolute; left: -38px; top: 26px;
+    width: 11px; height: 11px;
+    border: 1px solid var(--gold);
+    background: var(--dark); border-radius: 50%;
+    transform: translateX(-1px);
+  }
+  .flow-step-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: .65rem; letter-spacing: .3em;
+    color: var(--gold); margin-bottom: 6px;
+    text-transform: uppercase;
+  }
+  .flow-step h4 {
+    font-size: .9rem; font-weight: 400;
+    letter-spacing: .1em; color: var(--text);
+  }
+  .flow-step p {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: .72rem; color: var(--text-muted);
+    line-height: 1.7; margin-top: 4px;
+  }
+
+  /* ── TARGET ── */
+  #target { background: var(--dark-2); }
+  .target-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 24px; margin-top: 60px;
+  }
+  .target-card {
+    padding: 40px 28px; text-align: center;
+    border: 1px solid rgba(201,169,110,.14);
+    background: rgba(201,169,110,.02);
+    transition: border-color .3s, background .3s;
+  }
+  .target-card:hover {
+    border-color: rgba(201,169,110,.35);
+    background: rgba(201,169,110,.05);
+  }
+  .target-icon { font-size: 2.2rem; margin-bottom: 16px; display: block; }
+  .target-card h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem; color: var(--gold-light);
+    font-weight: 400; letter-spacing: .08em; margin-bottom: 10px;
+  }
+  .target-card p {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: .72rem; color: var(--text-muted); line-height: 1.8;
+  }
+
+  /* ── ROOMS ── */
+  #rooms { background: var(--dark); }
+  .rooms-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2px; margin-top: 60px;
+  }
+  .room-card {
+    background: var(--dark-3);
+    overflow: hidden; position: relative;
+  }
+  .room-img {
+    width: 100%; height: 220px; object-fit: cover;
+    display: block; opacity: .85;
+    transition: opacity .4s, transform .4s;
+  }
+  .room-card:hover .room-img { opacity: 1; transform: scale(1.03); }
+  .room-info { padding: 24px 28px; }
+  .room-info h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.15rem; letter-spacing: .1em; color: var(--gold-light);
+  }
+  .room-info p {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: .72rem; color: var(--text-muted);
+    line-height: 1.8; margin-top: 8px;
+  }
+
+  /* ── PRICE ── */
+  #price { background: var(--dark-2); }
+  .price-table-wrap {
+    margin-top: 60px;
+    border: 1px solid rgba(201,169,110,.15);
+    overflow: hidden;
+  }
+  .price-header {
+    background: rgba(201,169,110,.06);
+    padding: 18px 32px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: .75rem; letter-spacing: .35em;
+    text-transform: uppercase; color: var(--gold);
+  }
+  table { width: 100%; border-collapse: collapse; }
+  th, td {
+    padding: 16px 32px; text-align: left;
+    border-bottom: 1px solid rgba(255,255,255,.05);
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: .78rem;
+  }
+  th {
+    color: var(--text-muted); font-weight: 300;
+    letter-spacing: .1em; background: rgba(201,169,110,.03);
+  }
+  td { color: var(--text); }
+  td.price-val {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem; color: var(--gold); letter-spacing: .05em;
+  }
+  .price-note {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: .7rem; color: var(--text-muted);
+    margin-top: 20px; line-height: 1.8; letter-spacing: .05em;
+  }
+
+  /* ── ACCESS ── */
+  #access { background: var(--dark); }
+  .access-layout {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 60px; margin-top: 60px;
+  }
+  .access-info dt {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: .68rem; letter-spacing: .25em;
+    text-transform: uppercase; color: var(--gold);
+    margin-bottom: 6px; margin-top: 28px;
+  }
+  .access-info dt:first-child { margin-top: 0; }
+  .access-info dd {
+    font-family: 'Noto Serif JP', serif;
+    font-size: .85rem; color: var(--text); line-height: 1.8;
+  }
+  .map-placeholder {
+    background: var(--dark-3);
+    border: 1px solid rgba(201,169,110,.12);
+    display: flex; align-items: center; justify-content: center;
+    min-height: 300px; color: var(--text-muted);
+    font-family: 'Noto Sans JP', sans-serif; font-size: .8rem;
+    letter-spacing: .1em;
+  }
+  .map-link {
+    display: inline-block; margin-top: 20px;
+    padding: 12px 28px;
+    border: 1px solid var(--gold);
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: .72rem; letter-spacing: .2em;
+    color: var(--gold); text-decoration: none;
+    transition: background .3s, color .3s;
+  }
+  .map-link:hover { background: var(--gold); color: var(--dark); }
+
+  /* ── CTA ── */
+  .cta-band {
+    padding: 80px 24px; text-align: center;
+    background: linear-gradient(135deg, #100a0b 0%, #1a0f12 50%, #0d0d0d 100%);
+    border-top: 1px solid rgba(201,169,110,.1);
+    border-bottom: 1px solid rgba(201,169,110,.1);
+  }
+  .cta-band h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    font-weight: 300; letter-spacing: .1em; color: var(--text);
+    margin-bottom: 12px;
+  }
+  .cta-band p {
+    font-family: 'Noto Serif JP', serif;
+    font-size: .85rem; color: var(--text-muted); letter-spacing: .12em;
+    margin-bottom: 36px;
+  }
+  .cta-tel {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2rem, 5vw, 3.2rem);
+    color: var(--gold); letter-spacing: .1em; display: block;
+    text-decoration: none; margin-bottom: 8px;
+  }
+  .cta-tel-note {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: .7rem; color: var(--text-muted); letter-spacing: .15em;
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--dark-2); padding: 40px 24px;
+    text-align: center; border-top: 1px solid rgba(255,255,255,.05);
+  }
+  footer .footer-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem; letter-spacing: .25em; color: var(--gold);
+    margin-bottom: 10px;
+  }
+  footer p {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: .65rem; color: var(--text-muted); letter-spacing: .1em;
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 768px) {
+    nav { padding: 16px 24px; }
+    .nav-links { display: none; }
+    .privacy-layout { grid-template-columns: 1fr; gap: 48px; }
+    .access-layout { grid-template-columns: 1fr; }
+    th, td { padding: 12px 16px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">Saint Stella</div>
+  <ul class="nav-links">
+    <li><a href="#appeal">特徴</a></li>
+    <li><a href="#privacy">ご利用方法</a></li>
+    <li><a href="#target">ご利用シーン</a></li>
+    <li><a href="#price">料金</a></li>
+    <li><a href="#access">アクセス</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <span class="hero-ornament">Kashihara, Nara ── Hotel</span>
+  <h1 class="hero-title">
+    Saint Stella
+    <em>セイントステラ</em>
+  </h1>
+  <p class="hero-sub">
+    誰でも、ひとりでも、ふたりでも。<br>
+    気軽に使える、あなただけの空間。
+  </p>
+  <div class="hero-divider"></div>
+  <div class="hero-badges">
+    <span class="badge">駐車場無料</span>
+    <span class="badge">1名利用歓迎</span>
+    <span class="badge">同性利用可</span>
+    <span class="badge">ビジネス利用可</span>
+    <span class="badge">プライバシー重視</span>
+  </div>
+</section>
+
+<!-- APPEAL -->
+<section id="appeal">
+  <div class="container">
+    <span class="section-label">Features</span>
+    <h2 class="section-title">選ばれる理由</h2>
+    <div class="appeal-grid">
+      <div class="appeal-card">
+        <span class="appeal-icon">🅿️</span>
+        <h3>駐車場無料</h3>
+        <p>全17台、完全無料。お車でお越しの出張・旅行の方にも安心のゼロ追加料金。</p>
+      </div>
+      <div class="appeal-card">
+        <span class="appeal-icon">💴</span>
+        <h3>リーズナブルな料金</h3>
+        <p>お財布に優しい価格設定。一般のビジネスホテルと比較しても圧倒的なコストパフォーマンス。</p>
+        <span class="price-highlight">平日休憩 ¥1,990〜</span>
+      </div>
+      <div class="appeal-card">
+        <span class="appeal-icon">🔒</span>
+        <h3>プライバシー最優先</h3>
+        <p>駐車場番号と客室番号が連動。空き状況が一目でわかり、チェックインはほぼ非接触で完結。</p>
+      </div>
+      <div class="appeal-card">
+        <span class="appeal-icon">📺</span>
+        <h3>快適な室内設備</h3>
+        <p>42インチ以上の大型TV、VOD完備。電気ポット・各種充電器など、ビジネス利用にも対応。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRIVACY FLOW -->
+<section id="privacy">
+  <div class="container">
+    <span class="section-label">How to Use</span>
+    <h2 class="section-title">スムーズな<br>ご利用の流れ</h2>
+    <div class="privacy-layout">
+      <div class="privacy-text">
+        <p>当ホテルは<strong style="color:var(--gold-light)">「人と極力顔を合わせない」</strong>設計を採用。<br>フロントに立ち寄らず、専用駐車場に停めるだけでお部屋へ直行できます。</p>
+        <p>帰り際の清算時のみスタッフとの対応が発生しますが、それ以外は自分のペースでリラックスしてご滞在いただけます。出張で疲れた夜も、ひとりでゆっくりしたい時も、ここが自分だけの安らぎ空間になります。</p>
+      </div>
+      <div class="privacy-visual">
+        <div class="flow-steps">
+          <div class="flow-step">
+            <div class="flow-step-num">Step 01</div>
+            <h4>空き駐車場を確認</h4>
+            <p>駐車場の空きがそのままお部屋の空き。一目でわかるシステム。</p>
+          </div>
+          <div class="flow-step">
+            <div class="flow-step-num">Step 02</div>
+            <h4>駐車場に停めるだけ</h4>
+            <p>駐車スペース番号＝客室番号。フロント不要でそのままお部屋へ。</p>
+          </div>
+          <div class="flow-step">
+            <div class="flow-step-num">Step 03</div>
+            <h4>ゆっくりお過ごしください</h4>
+            <p>チェックイン時はスタッフと会わずに入室可能。完全プライベート空間。</p>
+          </div>
+          <div class="flow-step">
+            <div class="flow-step-num">Step 04</div>
+            <h4>フロントにて清算</h4>
+            <p>ご退室時のみ、フロントでのお支払いとなります。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TARGET -->
+<section id="target">
+  <div class="container">
+    <span class="section-label">Welcome to All</span>
+    <h2 class="section-title">どなたでも<br>ご利用いただけます</h2>
+    <div class="target-grid">
+      <div class="target-card">
+        <span class="target-icon">💼</span>
+        <h3>出張ビジネスマン</h3>
+        <p>ビジネスホテル代わりに。宿泊プランあり。大型TVと広いベッドで翌日の業務もバッチリ。</p>
+      </div>
+      <div class="target-card">
+        <span class="target-icon">👩</span>
+        <h3>女性おひとり様</h3>
+        <p>女性同性利用可。人と会わずチェックインできるので、安心してご利用いただけます。</p>
+      </div>
+      <div class="target-card">
+        <span class="target-icon">👨</span>
+        <h3>男性おひとり様</h3>
+        <p>男性同性利用可。休憩・宿泊どちらもOK。リフレッシュや一人時間に最適。</p>
+      </div>
+      <div class="target-card">
+        <span class="target-icon">💑</span>
+        <h3>カップル・ご夫婦</h3>
+        <p>もちろんカップルでのご利用も大歓迎。プライベートな空間でゆったり過ごせます。</p>
+      </div>
+      <div class="target-card">
+        <span class="target-icon">🌸</span>
+        <h3>観光・旅行中の方</h3>
+        <p>橿原神宮など観光地が近い橿原エリア。旅の疲れを癒す宿として好評です。</p>
+      </div>
+      <div class="target-card">
+        <span class="target-icon">🛋️</span>
+        <h3>ひとり時間が欲しい方</h3>
+        <p>仕事・育児の息抜きに。誰にも邪魔されない、自分だけの時間と空間を。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ROOMS -->
+<section id="rooms">
+  <div class="container">
+    <span class="section-label">Rooms</span>
+    <h2 class="section-title">お部屋のご紹介</h2>
+    <div class="rooms-grid" style="margin-top:60px">
+      <div class="room-card">
+        <img class="room-img" src="https://contents.happyhotel.jp/assets/images/hotels/610356/exterior.jpg" alt="スタンダードルーム" onerror="this.style.background='#1e1e1e';this.style.height='220px'">
+        <div class="room-info">
+          <h3>スタンダードルーム</h3>
+          <p>落ち着いたインテリアで統一されたお部屋。ゆったりとしたベッドと充実のアメニティをご用意しています。</p>
+        </div>
+      </div>
+      <div class="room-card">
+        <div style="width:100%;height:220px;background:linear-gradient(135deg,#1a0a0d,#0d0d0d);display:flex;align-items:center;justify-content:center;color:var(--text-muted);font-family:'Cormorant Garamond',serif;font-size:1rem;letter-spacing:.2em;">
+          A-306 Premium
+        </div>
+        <div class="room-info">
+          <h3>プレミアムルーム A-306</h3>
+          <p>深みのある赤と黒でコーディネートされた上質な空間。大型ミラーと大型TVで特別な時間を演出。</p>
+        </div>
+      </div>
+      <div class="room-card">
+        <div style="width:100%;height:220px;background:linear-gradient(135deg,#0a1205,#0d0d0d);display:flex;align-items:center;justify-content:center;color:var(--text-muted);font-family:'Cormorant Garamond',serif;font-size:1rem;letter-spacing:.2em;">
+          17 Rooms Total
+        </div>
+        <div class="room-info">
+          <h3>全17室完備</h3>
+          <p>各タイプ異なる雰囲気のお部屋をご用意。詳細はお電話またはご来館時にお問い合わせください。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICE -->
+<section id="price">
+  <div class="container">
+    <span class="section-label">Pricing</span>
+    <h2 class="section-title">ご利用料金</h2>
+    <div class="price-table-wrap">
+      <div class="price-header">休憩プラン ── Rest Plan</div>
+      <table>
+        <thead>
+          <tr>
+            <th>曜日</th>
+            <th>2時間まで</th>
+            <th>5時間まで</th>
+            <th>10時間まで</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>月〜金</td>
+            <td class="price-val">¥1,990〜</td>
+            <td class="price-val">¥2,480〜</td>
+            <td class="price-val">¥3,480〜</td>
+          </tr>
+          <tr>
+            <td>土・日・祝</td>
+            <td class="price-val">¥2,490〜</td>
+            <td class="price-val">¥2,980〜</td>
+            <td class="price-val">¥3,980〜</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="price-table-wrap" style="margin-top:24px">
+      <div class="price-header">宿泊プラン ── Stay Plan</div>
+      <table>
+        <thead>
+          <tr>
+            <th>曜日</th>
+            <th>最大16時間</th>
+            <th>チェックアウト</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>日〜木</td>
+            <td class="price-val">¥4,480〜</td>
+            <td>翌12:00まで</td>
+          </tr>
+          <tr>
+            <td>金・土・祝前</td>
+            <td class="price-val">¥5,480〜</td>
+            <td>翌13:00まで</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="price-note">※ 表示金額はすべて税込です　※ 駐車場は無料です　※ 1名様からご利用いただけます</p>
+  </div>
+</section>
+
+<!-- ACCESS -->
+<section id="access">
+  <div class="container">
+    <span class="section-label">Access</span>
+    <h2 class="section-title">アクセス</h2>
+    <div class="access-layout">
+      <dl class="access-info">
+        <dt>住所</dt>
+        <dd>〒634-0813<br>奈良県橿原市曲川町7-2-20</dd>
+        <dt>電話番号</dt>
+        <dd>0744-24-6476</dd>
+        <dt>電車でお越しの方</dt>
+        <dd>JR金橋駅より徒歩約5分</dd>
+        <dt>お車でお越しの方</dt>
+        <dd>24号線 曲川交差点すぐ<br>高田バイパス 奈良・京都出口すぐ<br>葛城IC より約9分</dd>
+        <dt>駐車場</dt>
+        <dd>無料・17台（ハイルーフ不可）</dd>
+        <a class="map-link" href="https://maps.google.com/?q=奈良県橿原市曲川町7-2-20" target="_blank">Google マップで見る →</a>
+      </dl>
+      <div class="map-placeholder">
+        📍 地図はGoogleマップでご確認ください
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<div class="cta-band">
+  <h2>ご不明な点は<br>お電話でどうぞ</h2>
+  <p>24時間365日、スタッフが対応いたします</p>
+  <a class="cta-tel" href="tel:0744246476">0744-24-6476</a>
+  <p class="cta-tel-note">通話料無料ではありません</p>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">SAINT STELLA ── セイントステラ</div>
+  <p>〒634-0813 奈良県橿原市曲川町7-2-20　TEL: 0744-24-6476</p>
+  <p style="margin-top:10px">© 2024 Saint Stella. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
