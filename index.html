@@ -29,21 +29,30 @@
     overflow-x: hidden;
   }
 
-  /* ── PRICE TOP BANNER ── */
+
+/* ── PRICE TOP BANNER（太く・強くアピール） ── */
   .price-top-banner {
     position: fixed; top: 0; left: 0; right: 0; z-index: 200;
     background: var(--red-accent);
-    text-align: center; padding: 8px 16px;
+    text-align: center; 
+    padding: 14px 16px; 
     font-family: 'Noto Sans JP', sans-serif;
-    font-size: .78rem; letter-spacing: .15em; color: #fff;
-    display: flex; align-items: center; justify-content: center; gap: 24px;
+    font-size: .88rem;
+    font-weight: 500;
+    letter-spacing: .12em; color: #fff;
+    display: flex; align-items: center; justify-content: center; gap: 28px;
     flex-wrap: wrap;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.4); 
   }
   .price-top-banner strong {
     font-family: 'Noto Sans JP', sans-serif;
-    font-size: 1rem; color: #ffe08a; letter-spacing: .05em;
+    font-size: 1.15rem; 
+    color: #ffe08a; letter-spacing: .02em;
+    text-shadow: 0 1px 4px rgba(0,0,0,0.5); 
   }
-  .price-top-banner span { opacity: .85; }
+  .price-top-banner span { 
+    text-shadow: 0 1px 3px rgba(0,0,0,0.3);
+  }
 
   /* ── NAV ── */
   nav {
@@ -579,6 +588,9 @@
   <div class="container">
     <span class="section-label">料金案内</span>
     <h2 class="section-title">ご利用料金</h2>
+    <p style="font-family:'Noto Serif JP',serif; font-size:.88rem; line-height:1.8; color:var(--text-muted); margin: 24px 0 0 0;">
+      セイントステラは、橿原エリア・大和高田エリアにおいて<strong style="color:var(--gold-light); font-weight:500;">地域最安値クラス</strong>の圧倒的なコストパフォーマンスを実現。休憩・宿泊ともに、地域の一般的なビジネスホテルやレジャーホテルを大きく下回るリーズナブルな価格設定となっております。出張の滞在からお一人様のリフレッシュまで、お財布を気にせずいつでもお気軽にご利用ください。
+    </p>
     <div class="price-table-wrap">
       <div class="price-header">休憩プラン ── Rest Plan</div>
       <table>
@@ -704,7 +716,7 @@
         <div class="room-img-wrap">
           <!-- 【差し替え方法】GitHubに画像をアップロード後、下のsrc=""の中にファイル名を入力してください -->
           <!-- 例: src="premium-room.jpg" -->
-          <img src="r206m.jpg" alt="プレミアムルーム A-306" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <img src="r206m.jpg" alt="プレミアムルーム" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
           <div style="display:flex;align-items:center;justify-content:center;width:100%;height:100%;color:var(--text-muted);font-family:'Noto Serif JP',serif;font-size:.85rem;letter-spacing:.1em;">プレミアムルーム A-306</div>
         </div>
         <div class="room-info">
@@ -832,7 +844,6 @@
   <h2>ご不明な点は<br>お電話でどうぞ</h2>
   <p>24時間365日、スタッフが対応いたします</p>
   <a class="cta-tel" href="tel:0744246476">0744-24-6476</a>
-  <p class="cta-tel-note">通話料無料ではありません</p>
 </div>
 
 <!-- FOOTER -->
