@@ -509,7 +509,89 @@
     color: var(--gold); letter-spacing: .08em; display: block;
     text-decoration: none; margin-bottom: 8px;
   }
-
+  /* ── COMPANY INFO ── */
+#company {
+  background: var(--dark-2);
+  border-top: 1px solid rgba(201,169,110,.1);
+}
+.company-block {
+  margin-top: 50px;
+}
+.company-block:first-of-type { margin-top: 60px; }
+.company-block h3 {
+  font-family: 'Noto Serif JP', serif;
+  font-size: 1.1rem; font-weight: 500; color: var(--gold-light);
+  letter-spacing: .1em; margin-bottom: 24px;
+  padding-bottom: 12px; border-bottom: 1px solid rgba(201,169,110,.15);
+}
+.company-table {
+  width: 100%; border-collapse: collapse;
+}
+.company-table tr {
+  border-bottom: 1px solid rgba(255,255,255,.05);
+}
+.company-table th {
+  text-align: left; padding: 12px 24px 12px 0;
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: .72rem; font-weight: 400; letter-spacing: .12em;
+  color: var(--text-muted); white-space: nowrap; vertical-align: top;
+  width: 160px;
+}
+.company-table td {
+  padding: 12px 0;
+  font-family: 'Noto Serif JP', serif;
+  font-size: .82rem; color: var(--text); line-height: 1.8;
+}
+.policy-item { margin-top: 32px; }
+.policy-item h4 {
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: .85rem; font-weight: 500; color: var(--gold);
+  letter-spacing: .08em; margin-bottom: 10px;
+}
+.policy-item p {
+  font-family: 'Noto Serif JP', serif;
+  font-size: .82rem; color: var(--text-muted);
+  line-height: 2;
+}
+.policy-subitem {
+  margin-top: 18px; padding-left: 20px;
+  border-left: 2px solid rgba(201,169,110,.2);
+}
+.policy-subitem h5 {
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: .8rem; font-weight: 500; color: var(--gold-light);
+  letter-spacing: .05em; margin-bottom: 6px;
+}
+.policy-subitem p {
+  font-family: 'Noto Serif JP', serif;
+  font-size: .8rem; color: var(--text-muted); line-height: 1.9;
+}
+.future-vision {
+  margin-top: 36px;
+  padding: 36px 32px;
+  background: rgba(201,169,110,.04);
+  border: 1px solid rgba(201,169,110,.18);
+  text-align: center;
+}
+.future-vision .vision-from {
+  font-family: 'Noto Serif JP', serif;
+  font-size: .85rem; color: var(--text-muted); line-height: 1.8;
+}
+.future-vision .vision-arrow {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.5rem; color: var(--gold); margin: 14px 0;
+}
+.future-vision .vision-to {
+  font-family: 'Noto Serif JP', serif;
+  font-size: .95rem; color: var(--gold-light); font-weight: 500;
+  line-height: 1.8;
+}
+.future-vision .vision-note {
+  font-family: 'Noto Serif JP', serif;
+  font-size: .8rem; color: var(--text-muted);
+  line-height: 2; margin-top: 28px;
+  text-align: left;
+}
   /* ── FOOTER ── */
   footer {
     background: var(--dark-2); padding: 40px 24px;
